@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASISTEC_PC - Bienvenido</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="welcome-card">
+            <div class="welcome-header">
+                <span class="material-icons welcome-icon">check_circle</span>
+                <h1>¡Bienvenido a ASISTEC_PC!</h1>
+                <p>Has iniciado sesión exitosamente</p>
+            </div>
+            
+            <div class="welcome-content">
+                <div class="user-info">
+                    <span class="material-icons">person</span>
+                    <span id="userName">Administrador</span>
+                </div>
+                
+                <div class="welcome-message">
+                    <h2>Panel de Administración</h2>
+                    <p>Desde aquí puedes gestionar tu tienda de computadoras y tecnología.</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="action-btn primary">
+                        <span class="material-icons">inventory</span>
+                        Ver Inventario
+                    </button>
+                    <button class="action-btn secondary">
+                        <span class="material-icons">people</span>
+                        Gestionar Clientes
+                    </button>
+                    <button class="action-btn secondary">
+                        <span class="material-icons">analytics</span>
+                        Ver Reportes
+                    </button>
+                </div>
+                
+                <button class="logout-btn" onclick="cerrarSesion()">
+                    <span class="material-icons">logout</span>
+                    Cerrar Sesión
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../controlador/loginController.js"></script>
+</body>
+</html>

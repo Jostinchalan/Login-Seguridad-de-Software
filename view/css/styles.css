@@ -1,0 +1,523 @@
+/* Material Design 3 Variables */
+:root {
+  --md-primary: #1976d2;
+  --md-primary-variant: #1565c0;
+  --md-secondary: #03dac6;
+  --md-background: #f5f5f5;
+  --md-surface: #ffffff;
+  --md-error: #b00020;
+  --md-on-primary: #ffffff;
+  --md-on-secondary: #000000;
+  --md-on-background: #000000;
+  --md-on-surface: #000000;
+  --md-on-error: #ffffff;
+
+  --md-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.16);
+  --md-elevation-2: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.18);
+  --md-elevation-3: 0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.12);
+
+  --md-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: var(--md-background);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card {
+  background: var(--md-surface);
+  border-radius: 16px;
+  box-shadow: var(--md-elevation-2);
+  overflow: hidden;
+  animation: slideUp 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-header {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 10h20M10 0v20" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>');
+  opacity: 0.3;
+}
+
+.logo {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 16px;
+}
+
+.logo .material-icons {
+  font-size: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.login-header h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: 0.15px;
+  line-height: 1.3;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  opacity: 0.95;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 1.5;
+}
+
+.login-form {
+  padding: 32px 24px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field .material-icons {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(0, 0, 0, 0.38);
+  font-size: 20px;
+  z-index: 1;
+  transition: var(--md-transition);
+}
+
+.input-field input {
+  width: 100%;
+  padding: 16px 16px 16px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background: var(--md-surface);
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--md-on-surface);
+  outline: none;
+  transition: var(--md-transition);
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+}
+
+.input-field input:focus {
+  border-color: var(--md-primary);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.input-field input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+}
+
+.input-field label {
+  display: none;
+}
+
+.input-line {
+  display: none;
+}
+
+.input-line::after {
+  display: none;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--md-transition);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  box-shadow: var(--md-elevation-1);
+}
+
+.login-btn:hover {
+  background: var(--md-primary-variant);
+  box-shadow: var(--md-elevation-2);
+  transform: translateY(-1px);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--md-elevation-1);
+}
+
+.btn-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.login-btn:active .btn-ripple {
+  width: 300px;
+  height: 300px;
+}
+
+.form-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.form-links a {
+  color: var(--md-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: var(--md-transition);
+  padding: 8px;
+  border-radius: 4px;
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+}
+
+.form-links a:hover {
+  background: rgba(25, 118, 210, 0.05);
+  text-decoration: underline;
+}
+
+.login-footer {
+  background: rgba(0, 0, 0, 0.02);
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.login-footer p {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 1.4;
+}
+
+/* Welcome Page Styles */
+.welcome-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.welcome-card {
+  background: var(--md-surface);
+  border-radius: 16px;
+  box-shadow: var(--md-elevation-3);
+  overflow: hidden;
+  animation: slideUp 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.welcome-header {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.welcome-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.welcome-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.25px;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-header p {
+  font-size: 16px;
+  opacity: 0.95;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 1.4;
+}
+
+.welcome-content {
+  padding: 32px 24px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: rgba(25, 118, 210, 0.08);
+  border-radius: 8px;
+  color: var(--md-primary);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.25px;
+  line-height: 1.4;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.welcome-message h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--md-on-surface);
+  letter-spacing: 0.25px;
+  line-height: 1.3;
+}
+
+.welcome-message p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: var(--md-transition);
+  box-shadow: var(--md-elevation-1);
+  letter-spacing: 0.25px;
+  line-height: 1.4;
+}
+
+.action-btn.primary {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+}
+
+.action-btn.primary:hover {
+  background: var(--md-primary-variant);
+  box-shadow: var(--md-elevation-2);
+  transform: translateY(-1px);
+}
+
+.action-btn.secondary {
+  background: var(--md-surface);
+  color: var(--md-primary);
+  border: 2px solid var(--md-primary);
+}
+
+.action-btn.secondary:hover {
+  background: rgba(25, 118, 210, 0.08);
+  transform: translateY(-1px);
+}
+
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--md-error);
+  border: 1px solid var(--md-error);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition: var(--md-transition);
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+}
+
+.logout-btn:hover {
+  background: rgba(176, 0, 32, 0.08);
+}
+
+/* Error Message Styles */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(176, 0, 32, 0.1);
+  color: var(--md-error);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: shake 0.5s ease-in-out;
+  letter-spacing: 0.25px;
+  line-height: 1.4;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 0;
+  }
+
+  .login-card {
+    border-radius: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .login-header {
+    padding: 40px 24px;
+  }
+
+  .login-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 24px;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-container {
+    padding: 0;
+  }
+
+  .welcome-card {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --md-primary: #0066cc;
+    --md-on-surface: #000000;
+  }
+
+  .input-line {
+    background: #000000;
+  }
+}
